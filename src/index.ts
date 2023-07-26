@@ -13,10 +13,12 @@ window.Webflow.push(() => {
 
       if (masterBlacklist.indexOf(domain) !== -1) {
         emailField.value = '';
-        emailField.setAttribute(
-          'placeholder',
-          'Enter a valid business email or contact us at hello@daloopa.com.'
+        emailField.setCustomValidity(
+          'Enter a valid business email or contact us at hello@daloopa.com'
         );
+        emailField.setAttribute('placeholder', 'name@example.com');
+      } else {
+        emailField.setCustomValidity('');
       }
     });
   }
